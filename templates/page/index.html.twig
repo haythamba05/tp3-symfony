@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="row mt-4">
+        {% for i in 0..3 %}
+            <div class="col-3">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('images/dummy.png') }}" alt="Card image cap"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Cours {{ i + 1 }}</h5>
+                        <p class="card-text">
+                            Description du cours {{ i + 1 }}
+                        </p>
+                        <a href="#">Voir le cours</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="row justify-content-center mt-4">
+        <div class="col-auto">
+            <a href="{{ path('app_catalog_all') }}" class="btn btn-primary">
+                Voir tous les cours
+            </a>
+        </div>
+    </div>
+{% endblock %}
